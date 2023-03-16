@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Nuget properties -->
+    <!-- https://learn.microsoft.com/en-us/nuget/reference/msbuild-targets -->
+    <IsPackable>true</IsPackable>
+    <IncludeSymbols>false</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+    <Title>My Nuget Package</Title>
+    <Authors>David</Authors>
+    <Description>This is a Nuget Package</Description>
+    <Copyright>David Ullrich</Copyright>
+    <ContentTargetFolders>content;contentFiles</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\**">
+      <Pack>true</Pack>
+      <PackagePath>Assets</PackagePath>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="MyNugetPackage.targets" PackagePath="buildTransitive/MyNugetPackage.targets" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+<Project>
+    <ItemGroup>
+        <AssetsFiles Include="$(MSBuildThisFileDirectory)/../Assets/**" />
+    </ItemGroup>
+
+    <Target Name="CopyAssetsFiles" AfterTargets="Build">
+        <Message Importance="high" Text="** CopyAssetsFiles **" />
+        <Message Importance="high" Text="-> $(TargetDir)Assets " />
+        <Copy SourceFiles="@(AssetsFiles)" DestinationFolder="$(TargetDir)/Assets/%(RecursiveDir)" />
+    </Target>
+</Project>
