@@ -3,9 +3,16 @@
         <AssetsFiles Include="$(MSBuildThisFileDirectory)/../Assets/**" />
     </ItemGroup>
 
-    <Target Name="CopyAssetsFiles" AfterTargets="Build">
-        <Message Importance="high" Text="** CopyAssetsFiles **" />
-        <Message Importance="high" Text="-> $(TargetDir)Assets " />
+    <Target Name="CopyAssetsFilesAfterBuild" AfterTargets="Build">
+        <Message Importance="high" Text="** CopyAssetsFilesAfterBuild **" />
+        <Message Importance="high" Text="-> $(TargetDir)Assets" />
         <Copy SourceFiles="@(AssetsFiles)" DestinationFolder="$(TargetDir)/Assets/%(RecursiveDir)" />
     </Target>
+
+    <Target Name="CopyAssetsFilesAfterPublish" AfterTargets="Publish">
+        <Message Importance="high" Text="** CopyAssetsFilesAfterPublish **" />
+        <Message Importance="high" Text="-> $(PublishDir)Assets" />
+        <Copy SourceFiles="@(AssetsFiles)" DestinationFolder="$(PublishDir)/Assets/%(RecursiveDir)" />
+    </Target>
+
 </Project>

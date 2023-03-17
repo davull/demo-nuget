@@ -18,10 +18,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Assets\**">
+    <Content Include="Assets/Documents/*">
       <Pack>true</Pack>
-      <PackagePath>Assets</PackagePath>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <PackagePath>Assets/Documents</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets/Images/*">
+      <Pack>true</Pack>
+      <PackagePath>Assets/Images</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

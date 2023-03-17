@@ -9,6 +9,12 @@ The files will also be copied when the consuming pacakge is a transitive depende
 dotnet pack MyNugetPackage/MyNugetPackage.csproj -c Release -o ./nupkg -p:PackageVersion=1.0.0
 
 
+## Build and Publish
+
+dotnet build -c Debug .\ConsumingApplication\ConsumingApplication.csproj
+
+dotnet publish -c Release -o .\publish .\ConsumingApplication\ConsumingApplication.csproj
+
 ## Links
 
 - https://learn.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files
